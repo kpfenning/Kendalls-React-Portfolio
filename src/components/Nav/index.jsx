@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
+
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav({ currentPage }) {
   const pages = ['portfolio', 'contact', 'resume'];
 
   return (
-    <nav>
+    <nav className= 'navbar'>
+      <span> Kendall Pfenning </span>
       <ul className="flex-row">
         <li
           className={`mx-5 ${currentPage === '/' && 'navActive'}`}
