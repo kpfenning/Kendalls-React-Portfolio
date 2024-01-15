@@ -5,6 +5,7 @@ import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import { useState } from 'react';
+import './index.css';
 
 
 function App() {
