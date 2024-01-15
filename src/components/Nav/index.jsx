@@ -15,6 +15,9 @@ function Nav({ onPageChange }) {
         <Link to="About" onClick={() => changePage('About')}>
           Home
         </Link>
+        <Link to="About" onClick={() => changePage('About')}>
+          About Me
+        </Link>
 
         <Link to="Portfolio" onClick={() => changePage('Portfolio')}>
           Portfolio
@@ -23,7 +26,7 @@ function Nav({ onPageChange }) {
         <Link to="Contact" onClick={() => changePage('Contact')}>
           Contact
         </Link>
-
+        
       </div>
     
     </nav>

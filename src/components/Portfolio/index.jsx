@@ -7,46 +7,37 @@ function Portfolio() {
   // Replace links with deployed projects and GitHub repos
   const [projects] = useState([
     {
-      name: 'surfReport',
-      description: 'MERN Stack',
-      link: "https://github.com",
-      repo: "https://github.com"
+      name: 'Tackle-Times',
+      description: 'Keep up with your favorite NFL teams!',
+      link: "https://tackle-a6362ae6d6c7.herokuapp.com/Links to an external site.",
+      repo: "https://github.com/kpfenning/Tackle-Times"
     },
     {
-      name: 'pastelPuzzels',
-      description: 'MERN Stack',
-      link: "https://github.com",
-      repo: "https://github.com"
+      name: 'Oh-Ive-Seen-That',
+      description: 'A movie search engine where you can keep track of your favorite movies!',
+      link: "https://jcwarwick.github.io/Group2-Project/",
+      repo: "https://github.com/jcwarwick/Group2-Project"
     },
     {
-      name: 'runBuddy',
-      description: 'HTML/CSS',
-      link: "https://github.com",
-      repo: "https://github.com"
+      name: 'Catnip-Chronicles',
+      description: 'React game',
+      link: "https://github.com/dsatpm/catnip-chronicles",
+      repo: "https://github.com/dsatpm/catnip-chronicles"
     },
-    {
-      name: 'ledWall',
-      description: 'Node/IoT',
-      link: "https://github.com",
-      repo: "https://github.com"
-    },
-    {
-      name: 'calculator',
-      description: 'React/JavaScript/CSS',
-      link: "https://github.com",
-      repo: "https://github.com"
-    },
+    
   ]);
 
   return (
     <div>
       <div className="flex-row">
+        <div className="portfolio-container"> 
         {projects.map((project, idx) => (
           <Project
             project={project}
             key={"project" + idx}
           />
         ))}
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Page from "./components/Page";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -24,8 +22,6 @@ function App() {
                 return<Nav onPageChange={changePage}/>;
             case 'Portfolio':
                 return<Portfolio />;
-            case 'Resume':
-                return<Resume />;
             case 'Home':
                 default:
                     return <About />;

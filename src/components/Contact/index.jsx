@@ -41,6 +41,7 @@ function Contact() {
     return (
         <div className='contact'>
             <form className='contact-form'>
+                
                 <h2>Contact Me</h2>
                 <div className='form-container'>
                     <label>Name</label>
@@ -49,8 +50,13 @@ function Contact() {
                 <div className='form-container'>
                     <label>Email</label>
                     <input type='email' name='email' value={form.email} onChange={handleChange} required/>
-                    
                 </div>
+                <div className='form-container'>
+                    <label>Message</label>
+                    <textarea name='message' rows='4' value={form.message} onChange={handleChange} required/>
+                </div>
+                <button className='submit-btn' type='submit'>Submit</button>
+                
             </form>
         </div>
     )

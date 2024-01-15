@@ -2,28 +2,28 @@ main {
     margin: 0 auto;
     max-width: 90%;
     padding: 50px 30px;
+
   }
   :root {
-    --primary: #8c54ff;
-    --secondary: #31343D;
-    --tertiary: #b12704;
-    --light: #fafafa;
-    --dark: #799FBA;
-    --darker: #1F3B60;
+    
     --alpha: rgba(255,255,255,.7);
     --error: rgb(228, 46, 1);
     --spacing-one: calc(1rem * 0.5);
     --spacing-two: calc(1rem);
     --spacing-five: calc(2.5rem);
+
   }
   
   * {
     box-sizing: border-box;
+  
   }
   
   html,
   body {
     min-height: 100%;
+    background-color: rgb(196, 186, 144);
+    color:white;
   }
   
   body {
@@ -35,7 +35,7 @@ main {
     letter-spacing: 0.1em;
     background: var(--darker);
     color: var(--light);
-    font-family: 'Open Sans', sans-serif;
+    font-family: url('./assets/font/Salsa-Regular.ttf');
   }
   
   h1,
@@ -44,7 +44,7 @@ main {
   h4,
   h5,
   h6 {
-    font-family: 'Aladin', cursive;
+    font-family:  url('./assets/font/Salsa-Regular.ttf');
     font-weight: 500;
     margin: 5px 0;
     line-height: 1.25;
@@ -52,8 +52,9 @@ main {
   
   h1 {
     font-size: 5rem;
-    margin: 50px 20px;
+    margin: 50px 10px;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: rgb(60, 83, 60)
   }
   
   h2 {
@@ -61,7 +62,9 @@ main {
   }
   
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
+    padding-top: 50px;
+    text-align: center;
   }
   
   h4 {
@@ -77,15 +80,36 @@ main {
   }
   
   p {
-    font-size: 1.1rem;
+    padding-top: 30px;
     margin: 20px 0;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 800px;
     line-height: 2rem;
+    color: rgb(60, 83, 60);
+    padding-bottom: 40px;
+    
+  }
+
+  .aboutMe {
+    text-align: center;
+  }
+  .aboutPg {
+    background-image: url("../src/assets/cover/background.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
   
   a {
     color: var(--light);
     text-decoration: none;
     opacity: .5;
+    padding: 20px;
+    align-items: center;
+
   }
   
   a:hover {
@@ -102,6 +126,7 @@ main {
   }
   
   button {
+    margin-top: 15px;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
@@ -111,7 +136,7 @@ main {
     outline: none;
     cursor: pointer;
     margin: 0 1px;
-    background-color: var(--dark);
+    background-color: rgb(60, 83, 60);
     padding: 10px 15px;
     opacity: 0.7;
   }
@@ -127,7 +152,8 @@ main {
   }
   
   img {
-    max-width: 100%;
+    max-width: 80%;
+    align-items: center;
   }
   
   span[role='img'] {
@@ -140,13 +166,14 @@ main {
   
   input {
     margin: 10px 0;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.25rem;
     width: 600px;
     border: 1px solid var(--dark);
     outline: none;
     border-radius: 3px;
     transition: box-shadow 0.2s;
+    font-weight: bold;
   }
   
   input:focus {
@@ -155,7 +182,8 @@ main {
   }
   
   label {
-    margin-right: 10px;
+    font-weight: bold;
+    
   }
   
   li {
@@ -186,9 +214,11 @@ main {
   
   nav {
     position: relative;
-    font-family: 'Aladin', cursive;
+    font-family:  url('./assets/font/Salsa-Regular.ttf');
     font-size: 2.5rem;
     margin: 30px 20px;
+    display:flex;
+    justify-content: center;
   }
   
   nav a:hover {
@@ -196,9 +226,12 @@ main {
   }
   
   nav li {
+    align-items: center;
     cursor: pointer;
     text-shadow: 2px 2px 10px rgba(0,0,0, 0.5);
-    margin: 0 50px;
+    margin: 0 40px;
+    padding-right: 20px;
+
   }
   
   ul.skills {
@@ -211,7 +244,9 @@ main {
   
   footer {
     font-size: 48px;
+    display: flex;
     justify-content: center;
+    align-items: center;
   }
   
   footer a {
@@ -219,19 +254,15 @@ main {
     opacity: .5;
     margin: 10px 20px;
     transition: all .3s ease-in-out;
+    align-items: center;
+   
   }
   
   footer a:hover {
     opacity: 1;
   }
   
-  textarea {
-    width: 600px;
-    height: 200px;
-    border: 3px solid #cccccc;
-    padding: 5px;
-    margin-top: 10px;
-  }
+  
   
   .container {
     width: 85%;
@@ -242,7 +273,9 @@ main {
   
   .flex-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    background-image: url('./assets/cover/background.png');
   }
   
   .space-between {
@@ -282,10 +315,10 @@ main {
     margin-bottom: var(--spacing-five);
   }
   
-  .px-1 {
-    padding-right: var(--spacing-one);
-    padding-left: var(--spacing-one);
-  }
+ .px-1 {
+  background-color: rgb(196, 186, 144); 
+  align-items: center;
+ }
   
   .px-2 {
     padding-right: var(--spacing-two);
@@ -322,26 +355,30 @@ main {
   }
   
   .project-text {
-      color: var(--secondary);
+
+      color: black;
       position: absolute;
       top: 0px;
       bottom: 0px;
       left: 0px;
       right: 0px;
       padding: 50px;
-      z-index: 900;
-      opacity: 0;
-      transition: all .5s ease-in-out;
+      z-index: 700;
+      background-color: rgb(60, 83, 60);
+      
+      
   }
   
   .project-text:hover {
     background-color: var(--alpha);
     opacity: 1;
     border: 10px solid var(--secondary);
+    color:rgb(60, 83, 60) 
   }
   
   .project-text h3 {
     font-size: 2.5rem;
+    color:black;
   }
   
   .project-text a {
@@ -352,7 +389,11 @@ main {
   }
   
   .project-text a:hover {
-    color: var(--darker);
+    color: rgb(60, 83, 60)
+  }
+
+  .project-text:hover {
+    color: rgb(60, 83, 60);
   }
   
   .navActive {
@@ -360,6 +401,97 @@ main {
     cursor: default;
     text-shadow: 3px 3px 15px rgba(255,255,255, .5);
   }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-image: url(./assets/cover/background.png);
+    
+    
+  }
+
+  label {
+    color: rgb(60, 83, 60) ;
+    font-weight: bolder;
+  
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    background-color: rgb(143, 164, 131);
+    color: white;
+  }
+
+  textarea {
+    padding-top: 15px;
+    height:120px;
+    width: 400px;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+
+
+
+  .contact h2 {
+    width: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    color:rgb(60, 83, 60);
+    
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 75px;
+    
+  }
+
+  .footer-container {
+    background-color: rgb(196, 186, 144);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-container {
+    align-items: center;
+  }
+
+  .project p {
+    color: rgb(60, 83, 60);
+  }
+
+  .portfolio-container {
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
   @media only screen and (max-width: 1300px) {
     nav {
       position: static;
