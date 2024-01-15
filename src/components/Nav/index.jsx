@@ -1,29 +1,31 @@
+import React from "react";
 import { Link } from 'react-scroll';
 
-import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Nav({ currentPage }) {
-  const pages = ['portfolio', 'contact', 'resume'];
+
+
+function Nav({ onPageChange }) {
+  const changePage = (page) => {
+    onPageChange(page);
+  };
 
   return (
     <nav className= 'navbar'>
-      <span> Kendall Pfenning </span>
-      <ul className="flex-row">
-        <li
-          className={`mx-5 ${currentPage === '/' && 'navActive'}`}
-          key="about"
-        >
-          <Link to="/">About</Link>
-        </li>
-        {pages.map((Page) => (
-          <li
-            className={`mx-5 ${currentPage === `/${Page}` && 'navActive'}`}
-            key={Page}
-          >
-            <Link to={`/${Page}`}>{capitalizeFirstLetter(Page)}</Link>
-          </li>
-        ))}
-      </ul>
+      <div className="links">
+        <Link to="About" onClick={() => changePage('About')}>
+          Home
+        </Link>
+
+        <Link to="Portfolio" onClick={() => changePage('Portfolio')}>
+          Portfolio
+        </Link>
+
+        <Link to="Contact" onClick={() => changePage('Contact')}>
+          Contact
+        </Link>
+
+      </div>
+    
     </nav>
   );
 }

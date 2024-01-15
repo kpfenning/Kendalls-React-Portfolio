@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -20,7 +21,7 @@ function App() {
             case 'Footer':
                 return<Footer />;
             case 'Nav':
-                return<Nav />;
+                return<Nav onPageChange={changePage}/>;
             case 'Portfolio':
                 return<Portfolio />;
             case 'Resume':

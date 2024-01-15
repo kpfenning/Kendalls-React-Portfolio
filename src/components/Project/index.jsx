@@ -1,3 +1,4 @@
+import React from "react";
 import { removeHyphensAndCapitalize } from '../../utils/helpers';
 import * as projects from '../../assets';
 

@@ -1,84 +1,67 @@
+import React from 'react';
 import { useState } from 'react';
 
-import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
-    const [formState, setFormState] = useState({
+    const [form, setForm ] = useState({
         name: '',
         email: '',
-        message: ''
+        message: '',
     });
-
-    const [errorMessage, setErrorMessage] = useState('');
-    const { name, email, message } = formState;
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!errorMessage) {
-            console.log('Submit Form', formState);
-        }
-    };
-
     const handleChange = (e) => {
-        if (e.target.name === 'email') {
-            const isValid = validateEmail(e.target.value);
-            if (!isValid) {
-                setErrorMessage('Your email is invalid.');
-            } else {
-                setErrorMessage('');
-            }
-        } else {
-            if (!e.target.value.length) {
-                setErrorMessage(`${e.target.name} is required.`);
-            } else {
-                setErrorMessage('');
-            }
+        const{ name, value } = e.target;
+        setForm({
+            ...form,
+            [name]: value,
+        });
+        const errorsEl = validateField(name, value);
+        setErrors({
+            ...errors,
+            [name]: errorsEl[name],
+        });
+        };
+    const validateField = (name,value) => {
+        const errorsEl = {...errors };
+        switch (name) {
+            case 'name':
+                errorsEl.name = value.trim() === '' ? 'Required Field': '';
+            case 'email':
+                errorsEl.email = !isValidEmail(value) ? 'Invalid Email': '';
+            case 'message':
+                errorsEl.message =
+                    value.trim() === '' ? 'Required Field': '';
+            default:
         }
-        if (!errorMessage) {
-            setFormState({...formState, [e.target.name]: e.target.value });
-        }
+        return errorsEl;
+    };
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
     return (
-        <section>
-            <form id="contact-form" onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        defaultValue={name}
-                        onBlur={handleChange}
-                    />
+        <div className='contact'>
+            <form className='contact-form'>
+                <h2>Contact Me</h2>
+                <div className='form-container'>
+                    <label>Name</label>
+                    <input type='text' name='name' value={form.name} onChange={handleChange} required/>
                 </div>
-                <div>
-                    <label htmlFor="email">Email address:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        defaultValue={email}
-                        onBlur={handleChange}
-                    />
+                <div className='form-container'>
+                    <label>Email</label>
+                    <input type='email' name='email' value={form.email} onChange={handleChange} required/>
+                    
                 </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        name="message"
-                        rows="5"
-                        defaultValue={message}
-                        onBlur={handleChange}
-                    />
-                </div>
-                {errorMessage && (
-                    <div>
-                        <p className="error-text">{errorMessage}</p>
-                    </div>
-                )}
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-  );
-}
+            </form>
+        </div>
+    )
+    
+    }
+
+
+
+
+
+
 
 export default Contact;
     
